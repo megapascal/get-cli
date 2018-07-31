@@ -1,9 +1,11 @@
 import asyncio
-from colorama import Fore
+from colorama import Fore, init
 from config import get_all_members
 from config import client
 from config import join_channel
 import config
+
+init(convert=True)
 
 
 async def cleaner():

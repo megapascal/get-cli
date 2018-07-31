@@ -2,7 +2,9 @@ from telethon import TelegramClient
 import time
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon import errors
-from colorama import Fore
+from colorama import Fore, init
+
+init(convert=True)
 
 
 class Configurations:

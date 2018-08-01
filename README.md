@@ -1,9 +1,9 @@
 # get-cli 
 <img src="https://img.tglab.uz/124191486/15330368665b6049424e0cf.png">
 
-Very simple tg-cli that collects channel/chat users to one file using telethon
+Simple tg-cli that collects channel/chat users to one file using telethon
 
-<b>Requerements telethon==1.0.4, colorama==0.3.9</b>
+<b>Requirements telethon==1.0.4, colorama==0.3.9</b>
 
 <code>
    python-path/pip3 install telethon==1.0.4

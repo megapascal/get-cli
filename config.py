@@ -6,19 +6,11 @@ from colorama import Fore, init
 
 init(convert=True)
 
+API_ID = int()  # your api id
+API_HASH = str()  # your api hash
+SESSION = str()
 
-class Configurations:
-    def __init__(self, api_id: int(), api_hash: str(), session: str()):
-        self.api_id = api_id
-        self.api_hash = api_hash
-        self.session = session
-
-
-# fill in api credentials that you can get from https://my.telegram.core
-conf = Configurations(api_id="API_ID", api_hash='API_HASH', session='your_session')
-# enter your session name don't edit it too much! one session per one account
-
-client = TelegramClient(session=conf.session, api_id=conf.api_id, api_hash=conf.api_hash, app_version='0.0.1')
+client = TelegramClient(session=SESSION, api_id=API_ID, api_hash=API_HASH, app_version='0.0.1')
 client.start()
 
 

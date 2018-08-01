@@ -1,8 +1,6 @@
 import asyncio
 from colorama import Fore, init
-from config import get_all_members
-from config import client
-from config import join_channel
+from config import get_all_members, client, join_channel
 import config
 
 init(convert=True)
@@ -10,16 +8,16 @@ init(convert=True)
 
 async def cleaner():
     await config.credit()
-    text_cleaner = input(Fore.RESET+'Enter channel id/username/join_link: ').replace(' ', '')
-    if text_cleaner.startswith('https://') or text_cleaner.startswith('t.me'):
-        join_hash = text_cleaner.split('/')[-1]
+    text_cleaner = input(Fore.RESET+'Enter channel id/username/join_link: ').replace(' ', '')  # splitting unnecessary spaces
+    if text_cleaner.startswith('https://') or text_cleaner.startswith('t.me'):  # check if link is invite link(aka private link)
+        join_hash = text_cleaner.split('/')[-1]  # getting invite link hash
         print(Fore.LIGHTMAGENTA_EX + join_hash, Fore.RESET + '- your invite link hash')
         succ = await join_channel(join_hash)
         if succ in ['t', 'cont']:
             channel = await client.get_entity(text_cleaner)
             print(Fore.RESET + "Detected private channel/joined")
             return channel
-        elif succ == 'end':
+        elif succ == 'end':  # cancel operation
             asyncio.get_event_loop().close()
     else:
         return text_cleaner

@@ -17,7 +17,7 @@ async def cleaner():
             channel = await client.get_entity(text_cleaner)
             print(Fore.RESET + "Detected private channel/joined")
             return channel
-        elif succ == 'end':  # cancel operation
+        else:  # cancel operation
             asyncio.get_event_loop().close()
     else:
         return text_cleaner
@@ -36,4 +36,5 @@ async def main_func():
             print(Fore.RED + str(out_error))
     elif not client:
         print('Error occurred! Please be sure you have session file/api credentials filled')
+
 asyncio.get_event_loop().run_until_complete(main_func())

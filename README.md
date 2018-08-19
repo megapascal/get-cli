@@ -15,7 +15,7 @@ Simple tg-cli that collects channel/chat users to one file using telethon
 
 <code>$cd_proj_dir git clone https://github.com/megapascal/get-cli</code>
 
-<b>When installed go to config.py and enter your api credentials(api_hash, api_id) you can get from https://me.telegram.org</b>
+<b>When installed go to config.py and enter your api credentials(api_hash, api_id) you can get from https://my.telegram.org</b>
 
 Set <code>API_HASH, API_ID, SESSION</code> in config.py
 
